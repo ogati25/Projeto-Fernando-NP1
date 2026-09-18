@@ -187,7 +187,7 @@ Com o backend ligado, use abrir-frontend.bat ou abra frontend/index.html no nave
 | GET | /api/clientes/{id} | Busca pelo ID |
 | POST | /api/clientes | Cadastra |
 | PUT | /api/clientes/{id} | Altera |
-|   | DELETE /api/clientes/{id} | Exclui |
+| DELETE | /api/clientes/{id} | Exclui |
 
 Exemplo de cadastro:
 
