@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Veículos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Cadastro de Veículos</h1>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="clientes.html">Clientes</a>
+                <a class="ativo" href="veiculos.html">Veículos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <section class="cadastro">
+            <h2 id="titulo-formulario">Novo veículo</h2>
+            <div id="mensagem" class="mensagem" role="status"></div>
+
+            <form id="form-veiculo">
+                <input type="hidden" id="veiculo-id">
+
+                <label for="placa">Placa</label>
+                <input type="text" id="placa" maxlength="10" placeholder="ABC1D23" required>
+
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" maxlength="80" placeholder="Digite a marca" required>
+
+                <label for="modelo">Modelo</label>
+                <input type="text" id="modelo" maxlength="100" placeholder="Digite o modelo" required>
+
+                <label for="ano">Ano</label>
+                <input type="number" id="ano" min="1900" max="2200" placeholder="Digite o ano" required>
+
+                <label for="cor">Cor</label>
+                <input type="text" id="cor" maxlength="50" placeholder="Digite a cor">
+
+                <label for="cliente">Cliente</label>
+                <select id="cliente" required>
+                    <option value="">Selecione um cliente</option>
+                </select>
+
+                <div class="acoes-formulario">
+                    <button type="submit" id="btn-salvar">Salvar</button>
+                    <button type="button" id="btn-cancelar" class="secundario" hidden>Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="lista">
+            <div class="titulo-lista">
+                <h2>Veículos cadastrados</h2>
+                <input type="search" id="pesquisa" class="pesquisa" placeholder="Pesquisar por placa...">
+            </div>
+
+            <div class="tabela-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Ano</th>
+                            <th>Cor</th>
+                            <th>Cliente</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-veiculos"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/veiculos.js"></script>
+</body>
+</html>

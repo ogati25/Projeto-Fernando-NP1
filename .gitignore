@@ -1,0 +1,13 @@
+# Java
+backend/bin/
+*.class
+
+# Configuração local do banco
+backend/config.properties
+
+# Editores e sistema operacional
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

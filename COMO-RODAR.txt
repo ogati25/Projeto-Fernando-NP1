@@ -1,0 +1,84 @@
+COMO RODAR O PROJETO NO WINDOWS
+===============================
+
+O QUE PRECISA INSTALAR
+
+1. JDK 17
+   Download: https://adoptium.net/temurin/releases/?version=17
+
+   Escolha:
+   - Operating System: Windows
+   - Architecture: x64
+   - Package Type: JDK
+   - Arquivo: .msi
+
+   Durante a instalação, marque as opções para adicionar o Java ao PATH
+   e configurar JAVA_HOME.
+
+2. MYSQL SERVER E MYSQL WORKBENCH
+   Download: https://dev.mysql.com/downloads/installer/
+
+   Baixe o mysql-installer-web-community e escolha Custom. Instale somente:
+   - MySQL Server 8.0
+   - MySQL Workbench
+
+   Durante a configuração, mantenha a porta 3306 e anote a senha criada
+   para o usuário root.
+
+Não precisa instalar Maven. O driver do MySQL já está no projeto.
+
+
+PASSO A PASSO
+
+1. Verifique o Java
+
+   Abra um novo Prompt de Comando e execute:
+
+   java -version
+   javac -version
+
+   Os dois comandos precisam mostrar a versão instalada.
+
+2. Crie o banco
+
+   Abra o MySQL Workbench, entre na conexão local e execute:
+
+   backend\Database\01-criar-banco.sql
+   backend\Database\02-dados-teste.sql
+
+3. Configure a senha
+
+   Dê dois cliques em iniciar-backend.bat.
+
+   Na primeira vez, ele cria e abre backend\config.properties. Coloque na
+   linha banco.senha a mesma senha do usuário root criada no MySQL.
+
+   Exemplo:
+
+   banco.usuario=root
+   banco.senha=MinhaSenha
+
+   Salve e feche o Bloco de Notas.
+
+4. Inicie o backend
+
+   Dê dois cliques novamente em iniciar-backend.bat.
+
+   Quando aparecer "Servidor iniciado em http://localhost:5085", deixe essa
+   janela aberta.
+
+5. Abra o frontend
+
+   Dê dois cliques em abrir-frontend.bat.
+
+6. Encerre
+
+   Para desligar o backend, feche a janela preta ou pressione Ctrl+C nela.
+
+
+SE DER ERRO
+
+- "O JDK nao foi encontrado": reinstale o JDK marcando a opção PATH.
+- "Access denied for user root": confira banco.usuario e banco.senha.
+- "Communications link failure": confirme que o serviço MySQL está iniciado.
+- Porta 5085 ocupada: feche outra cópia do backend que já esteja aberta.

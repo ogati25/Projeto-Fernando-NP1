@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Clientes e Veículos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Sistema de Clientes e Veículos</h1>
+            <nav>
+                <a class="ativo" href="index.html">Início</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="veiculos.html">Veículos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="home">
+        <section class="home-intro">
+            <h2>Projeto de Banco de Dados</h2>
+            <p>Aplicação web para cadastro e gerenciamento de clientes e seus veículos, com persistência em MySQL e backend em Java.</p>
+        </section>
+
+        <section class="home-grid">
+            <article class="home-card">
+                <h2>Clientes</h2>
+                <p>Cadastre, consulte, pesquise, edite e exclua clientes.</p>
+                <a href="clientes.html">Acessar clientes</a>
+            </article>
+
+            <article class="home-card">
+                <h2>Veículos</h2>
+                <p>Gerencie veículos vinculados aos clientes já cadastrados.</p>
+                <a href="veiculos.html">Acessar veículos</a>
+            </article>
+        </section>
+
+        <p class="status-api" id="status-api">Verificando conexão com a API...</p>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script>
+        verificarApi();
+    </script>
+</body>
+</html>
